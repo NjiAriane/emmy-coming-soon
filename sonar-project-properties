@@ -1,3 +1,5 @@
-Sonar.projectKey=emmy-coming-soon
-sonar.host.url=http://localhost:9000
-sonar.login=squ_997dea93011b88a4f8a8ee96db6331a70e125e7f
+emmy-coming-soon -Dsonar.host.url=http://localhost:9000
+sonar.projectKey=emmy-coming-soon
+-Dsonar.login=sqp_951935804887bd581f70271ca61f3b3a7a5f4c49
+
+
