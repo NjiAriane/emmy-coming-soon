@@ -1,4 +1,4 @@
-emmy-coming-soon -Dsonar.host.url=http://localhost:9000
+emmy-coming-soon -Dsonar.host.url=http://sonarqube:9000
 sonar.projectKey=emmy-coming-soon
 -Dsonar.login=sqp_951935804887bd581f70271ca61f3b3a7a5f4c49
 
