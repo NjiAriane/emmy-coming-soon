@@ -33,9 +33,9 @@ pipeline {
         stage('Deployment') {
             steps {
                 echo 'Deploying to Dockerhub'
-                sh 'docker tag emmy-coming-soon:${BUILD_NUMBER} Ariane1/emmy-coming-soon:${BUILD_NUMBER}'
+                sh 'docker tag emmy-coming-soon:${BUILD_NUMBER} ${USERNAME}/emmy-coming-soon:${BUILD_NUMBER}'
                 sh 'docker login -u ${USERNAME} -p ${PASSWORD} docker.io'
-                sh 'docker push Ariane1/emmy-coming-soon:${BUILD_NUMBER}'
+                sh 'docker push ${USERNAME}/emmy-coming-soon:${BUILD_NUMBER}'
             }
         }
     }
