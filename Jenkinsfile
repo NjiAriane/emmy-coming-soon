@@ -11,6 +11,16 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarscanner') {
                     script {
+                        // Wait until SonarQube is ready
+                        waitUntil {
+                            def healthCheck = sh(
+                                script: "curl -s http://sonarqube:9000/api/system/health || echo 'fail'",
+                                returnStdout: true
+                            ).trim()
+                            return healthCheck.contains('"status":"GREEN"')
+                        }
+
+                        // Run SonarScanner once SonarQube is ready
                         sh """
                             ${SONARSCANNER} \
                             -Dsonar.projectKey=emmy-coming-soon \
